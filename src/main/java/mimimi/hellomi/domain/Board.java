@@ -14,9 +14,7 @@ public class Board {
     private String title; //제목
     private String content; //내용
     private int viewCnt; //조회수
-    private String noticeYn; //공지 여부
-    private String secretYn; //비밀 여부
-    private String deleteYn; //삭제 여부
+    private boolean deleteYn = false; //삭제 여부
     private LocalDateTime insertTime; //등록일
     private LocalDateTime updateTime; //수정일
 
@@ -52,27 +50,11 @@ public class Board {
         this.viewCnt = viewCnt;
     }
 
-    public String getNoticeYn() {
-        return noticeYn;
-    }
-
-    public void setNoticeYn(String noticeYn) {
-        this.noticeYn = noticeYn;
-    }
-
-    public String getSecretYn() {
-        return secretYn;
-    }
-
-    public void setSecretYn(String secretYn) {
-        this.secretYn = secretYn;
-    }
-
-    public String getDeleteYn() {
+    public boolean getDeleteYn() {
         return deleteYn;
     }
 
-    public void setDeleteYn(String deleteYn) {
+    public void setDeleteYn(boolean deleteYn) {
         this.deleteYn = deleteYn;
     }
 

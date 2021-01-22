@@ -4,6 +4,7 @@ import mimimi.hellomi.domain.Board;
 
 import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.Optional;
 
 public class JpaBoardRepository implements BoardRepository{
 
@@ -14,32 +15,28 @@ public class JpaBoardRepository implements BoardRepository{
     }
 
     @Override
-    public int insertBoard(Board board) {
-        return 0;
+    public Board save(Board board) {
+        em.persist(board);
+        return board;
     }
 
     @Override
-    public Board selectBoardDetail(Long id) {
+    public Optional<Board> findById(Long id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public List<Board> findAll() {
         return null;
     }
 
     @Override
-    public int updateBoard(Board board) {
-        return 0;
-    }
-
-    @Override
-    public int deleteBoard(Long id) {
-        return 0;
-    }
-
-    @Override
-    public List<Board> selectBoardList() {
+    public Board update(Board board) {
         return null;
     }
 
     @Override
-    public int selectBoardTotalCount() {
-        return 0;
+    public void delete(Board board) {
+
     }
 }
