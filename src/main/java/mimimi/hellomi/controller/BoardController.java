@@ -30,16 +30,17 @@ public class BoardController {
         Board board = new Board();
         board.setTitle(boardForm.getTitle());
         board.setContent(boardForm.getContent());
+        board.setName(boardForm.getName());
 
         boardService.insertBoard(board);
 
         return "redirect:/";
     }
 
-    @GetMapping("/boards")
+    @GetMapping("/")
     public String list(Model model) {
         List<Board> boards = boardService.selectBoardList();
         model.addAttribute("boards", boards);
-        return "boards/boardList";
+        return "index";
     }
 }
