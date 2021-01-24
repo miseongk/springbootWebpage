@@ -4,6 +4,7 @@ public class BoardForm {
 
     private String title;
     private String content;
+    private String name;
 
 
     public String getTitle() {
@@ -20,5 +21,13 @@ public class BoardForm {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

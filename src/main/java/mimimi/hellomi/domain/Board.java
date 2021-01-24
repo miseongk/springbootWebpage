@@ -13,6 +13,8 @@ public class Board {
     private Long id; //번호(PK)
     private String title; //제목
     private String content; //내용
+
+    private String name; //작성자
     private int viewCnt; //조회수
     private boolean deleteYn = false; //삭제 여부
     private LocalDateTime insertTime; //등록일
@@ -40,6 +42,14 @@ public class Board {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getViewCnt() {
