@@ -1,10 +1,66 @@
 {{>layout/header}}
-<h1>스프링 부트로 시작하는 웹 서비스</h1>
-<div class="col-md-12">
+
+<div class="jumbotron text-center" style="margin-bottom:0; background-color: #f99393;">
+    <div class="font-weight-bold">
+        <h1>Hi, i'm mi :)</h1>
+    </div>
+    <p>bla bla bla ...</p>
+</div>
+<br>
+<div class="float-right">
+    <div class="col">
+        <form class="d-flew">
+           <a href="/boards/new" role="button" class="btn btn-outline-light" style="background-color: #f99393;"
+            data-toggle="tooltip" title="click!!!" >글 남기기</a>
+        </form>
+    </div>
+</div>
+
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
-            <a href="/boards/new" role="button" class="btn btn-primary">글 등록</a>
+        <div class="col-sm-2">
+            <div class="card" style="width:100%">
+                <img class="card-img-top" src="/img/Hellomi_logo.png" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Miseong Kim</h4>
+                    <p class="card-text">WELCOME! <br> This is miseong kim's board.</p>
+                    <a href="#" class="btn bnt-primary" data-toggle="popover" title="Profile" data-content="sejong univ.
+                    computer engineering">See profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="table-responsive-sm">
+                <table class="table table-hover">
+                    <thead class="thead-strong">
+                    <tr>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>내용</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    {{#boards}}
+                        <tr>
+                            <td>{{title}}</td>
+                            <td>{{name}}</td>
+                            <td>{{content}}</td>
+                        </tr>
+                    {{/boards}}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();
+});
+</script>
+
 {{>layout/footer}}
